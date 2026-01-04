@@ -3,13 +3,17 @@
   - SPDX-License-Identifier: CC0-1.0
 -->
 
-# Plasma Keyboard
+# Plasma Keyboard with split layout
 
-The plasma-keyboard is a virtual keyboard based on [Qt Virtual Keyboard](https://doc.qt.io/qt-6/qtvirtualkeyboard-overview.html) designed to integrate in Plasma.
+This is an unnoficial fork of [Plasma Keyboard](https://invent.kde.org/plasma/plasma-keyboard) that adds split keyboard layouts to some of the languages.
+Currently only the EN-US and PT-BR locales have split versions; more of them can be patched in later by modding the QML from the folders under "src/layouts".
 
-It wraps Qt Virtual Keyboard in a window, and uses the input-method-v1 Wayland protocol to communicate with the compositor to function as an input method.
 
-## Build and install
+## Install from release
+
+Use flatpak to install the bundles from the "release" section of this repository. There is no "native" package for this fork.
+
+## Build from source
 
 ```sh
 mkdir build && cd build
@@ -17,11 +21,6 @@ cmake ..
 make && make install
 ```
 
-## Install using the flatpak nightly repository
-
-https://cdn.kde.org/flatpak/plasma-keyboard-nightly/org.kde.plasma.keyboard.flatpakref
-
-See also: https://userbase.kde.org/Tutorials/Flatpak#Nightly_KDE_apps
 
 ## Layouts
 
