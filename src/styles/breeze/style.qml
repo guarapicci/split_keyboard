@@ -51,7 +51,9 @@ KeyboardStyle {
     }
 
     // Always have the keyboard panel be 30% of the screen height, or 150px (whichever is larger)
-    readonly property real targetKeyboardHeight: Math.max(Screen.height * 0.3, 150)
+    readonly property real targetKeyboardHeight: PlasmaKeyboardSettings.automaticHeightEnabled ?
+                                                     Math.max(Screen.height * 0.3, 150)
+                                                   : PlasmaKeyboardSettings.manualRelativeHeight * Screen.height;
 
     // The value to multiply the height by to get the width
     readonly property real aspectRatio: {
@@ -80,7 +82,7 @@ KeyboardStyle {
     }
 
     // The width should never be > 6 times height
-    readonly property real maxWidthToHeightRatio: 6
+    readonly property real maxWidthToHeightRatio: PlasmaKeyboardSettings.splitKeyboardEnabled ? 36 : 6
 
     keyboardRelativeLeftMargin: {
         if (keyboardDesignWidth > keyboardDesignHeight * maxWidthToHeightRatio) {
