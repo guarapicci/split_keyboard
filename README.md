@@ -21,14 +21,9 @@ cmake ..
 make && make install
 ```
 
+## How to use
 
-## Layouts
-
-The keyboard layouts are located in the [src/layouts](/src/layouts) folder.
-
-They are forked from Qt's [layouts](https://github.com/qt/qtvirtualkeyboard/tree/dev/src/layouts), with modifications that we want for Plasma. Please view the official [Qt documentation](https://doc.qt.io/qt-6/qtvirtualkeyboard-overview.html#adding-new-keyboard-layouts) for a guide on how to create and modify keyboard layouts.
-
-To use Qt's built-in keyboard layouts rather than the ones we supply in `plasma-keyboard`, set `PLASMA_KEYBOARD_USE_QT_LAYOUTS=1` when starting KWin (or the login session).
+Install the virtual keyboard application and enable it under KDE Plasma Settings. Touch text fields on your device's touchscreen to trigger the virtual keyboard. Change language or open settings screen by pressing the language change button (usually on the lower left corner)
 
 ## Troubleshooting
 
