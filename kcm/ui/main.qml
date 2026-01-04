@@ -35,7 +35,7 @@ KCM.ScrollViewKCM {
             checked: kcm.soundEnabled
             onCheckedChanged: {
                 kcm.soundEnabled = checked;
-                checked = Qt.binding(() => kcm.soundEnabled)
+                checked = Qt.binding(() => kcm.soundEnabled);
             }
         }
 
@@ -46,7 +46,7 @@ KCM.ScrollViewKCM {
             checked: kcm.vibrationEnabled
             onCheckedChanged: {
                 kcm.vibrationEnabled = checked;
-                checked = Qt.binding(() => kcm.vibrationEnabled)
+                checked = Qt.binding(() => kcm.vibrationEnabled);
             }
         }
 
@@ -58,7 +58,7 @@ KCM.ScrollViewKCM {
             checked: kcm.keyboardNavigationEnabled
             onCheckedChanged: {
                 kcm.keyboardNavigationEnabled = checked;
-                checked = Qt.binding(() => kcm.keyboardNavigationEnabled)
+                checked = Qt.binding(() => kcm.keyboardNavigationEnabled);
             }
         }
         QQC2.Switch {
@@ -68,7 +68,7 @@ KCM.ScrollViewKCM {
             checked: kcm.splitKeyboardEnabled
             onCheckedChanged: {
                 kcm.splitKeyboardEnabled = checked;
-                checked = Qt.binding(() => kcm.splitKeyboardEnabled)
+                checked = Qt.binding(() => kcm.splitKeyboardEnabled);
             }
         }
         QQC2.Switch {
@@ -78,7 +78,7 @@ KCM.ScrollViewKCM {
             checked: kcm.automaticHeightEnabled
             onCheckedChanged: {
                 kcm.automaticHeightEnabled = checked;
-                checked = Qt.binding(() => kcm.automaticHeightEnabled)
+                checked = Qt.binding(() => kcm.automaticHeightEnabled);
             }
         }
         QQC2.Slider {
@@ -96,7 +96,7 @@ KCM.ScrollViewKCM {
             value: kcm.manualRelativeHeight
             onValueChanged: {
                 kcm.manualRelativeHeight = value;
-                value = Qt.binding(() => kcm.manualRelativeHeight)
+                value = Qt.binding(() => kcm.manualRelativeHeight);
             }
 
         }
