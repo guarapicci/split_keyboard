@@ -71,5 +71,34 @@ KCM.ScrollViewKCM {
                 checked = Qt.binding(() => kcm.splitKeyboardEnabled)
             }
         }
+        QQC2.Switch {
+            id: automaticHeightEnabled
+            text: i18n("Automatic Height")
+
+            checked: kcm.automaticHeightEnabled
+            onCheckedChanged: {
+                kcm.automaticHeightEnabled = checked;
+                checked = Qt.binding(() => kcm.automaticHeightEnabled)
+            }
+        }
+        QQC2.Slider {
+            id: manualHeight
+            visible: !(automaticHeightEnabled.checked)
+
+            Kirigami.FormData.label: i18n("Height")
+
+            // upper and lower limits are set to avoid obviously unusable values
+            // (e.g. no space left for GUI, not enough height for a keyboard)
+            // eventually the style and QML UI should figure out these boundaries automatically
+            from: 0.06
+            to: 0.8
+
+            value: kcm.manualRelativeHeight
+            onValueChanged: {
+                kcm.manualRelativeHeight = value;
+                value = Qt.binding(() => kcm.manualRelativeHeight)
+            }
+
+        }
     }
 }

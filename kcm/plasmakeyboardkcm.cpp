@@ -121,6 +121,34 @@ void PlasmaKeyboardKcm::setSplitKeyboardEnabled(bool splitKeyboardEnabled)
     setNeedsSave(true);
 }
 
+bool PlasmaKeyboardKcm::automaticHeightEnabled() const
+{
+    return m_automaticHeightEnabled;
+}
+void PlasmaKeyboardKcm::setAutomaticHeightEnabled (bool automaticHeightEnabled){
+    if (automaticHeightEnabled == m_automaticHeightEnabled ){
+        return;
+    }
+    m_automaticHeightEnabled = automaticHeightEnabled;
+    Q_EMIT automaticHeightEnabledChanged();
+
+    setNeedsSave(true);
+}
+
+double PlasmaKeyboardKcm::manualRelativeHeight() const
+{
+    return m_manualRelativeHeight;
+}
+void PlasmaKeyboardKcm::setManualRelativeHeight(double manualRelativeHeight){
+    if(m_manualRelativeHeight == manualRelativeHeight){
+        return;
+    }
+    m_manualRelativeHeight = manualRelativeHeight;
+    Q_EMIT manualRelativeHeightChanged();
+
+    setNeedsSave(true);
+}
+
 bool PlasmaKeyboardKcm::isSaveNeeded() const
 {
     return m_saveNeeded;
@@ -135,6 +163,8 @@ void PlasmaKeyboardKcm::load()
     Q_EMIT enabledLocalesChanged();
     setKeyboardNavigationEnabled(PlasmaKeyboardSettings::self()->keyboardNavigationEnabled());
     setSplitKeyboardEnabled(PlasmaKeyboardSettings::self()->splitKeyboardEnabled());
+    setAutomaticHeightEnabled(PlasmaKeyboardSettings::self()->automaticHeightEnabled());
+    setManualRelativeHeight(PlasmaKeyboardSettings::self()->manualRelativeHeight());
 
     setNeedsSave(false);
 }
@@ -146,6 +176,8 @@ void PlasmaKeyboardKcm::save()
     PlasmaKeyboardSettings::self()->setEnabledLocales(m_enabledLocales);
     PlasmaKeyboardSettings::self()->setKeyboardNavigationEnabled(m_keyboardNavigationEnabled);
     PlasmaKeyboardSettings::self()->setSplitKeyboardEnabled(m_splitKeyboardEnabled);
+    PlasmaKeyboardSettings::self()->setAutomaticHeightEnabled(m_automaticHeightEnabled);
+    PlasmaKeyboardSettings::self()->setManualRelativeHeight(m_manualRelativeHeight);
     PlasmaKeyboardSettings::self()->save();
 
     setNeedsSave(false);

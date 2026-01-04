@@ -32,5 +32,13 @@
             <label>Split the keyboard panel horizontally into two halves with a gap at the center.</label>
             <default>false</default>
         </entry>
+        <entry key="automaticHeightEnabled" type="bool">
+            <label>Wether the keyboard figures out its own height or not.</label>
+            <default>true</default>
+        </entry>
+        <entry key="manualRelativeHeight" type="double">
+            <label>When automatic height is disabled, defines how much of the available screen height the keyboard takes, from 0 (none) to 1.0 (all height)</label>
+            <default>0.3</default>
+        </entry>
     </group>
 </kcfg>
